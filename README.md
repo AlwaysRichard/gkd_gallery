@@ -16,7 +16,66 @@ A WordPress Gutenberg block plugin for displaying photo galleries with multiple 
 - WordPress 6.0+
 - PHP 8.0+
 - Node.js 18+ (for building)
-- The `gkd_gallery` custom taxonomy registered by the `gkd_dynamic-pages` plugin
+- A `gkd_gallery` custom taxonomy (see [Custom Taxonomy](#custom-taxonomy) below)
+
+## Custom Taxonomy
+
+This plugin displays images from posts assigned to a custom taxonomy called `gkd_gallery`. You must register this taxonomy before activating the plugin — either in your theme's `functions.php` or in a separate plugin.
+
+### Minimal Example
+
+Add this to your theme's `functions.php` or a custom plugin:
+
+```php
+add_action( 'init', function() {
+    register_taxonomy( 'gkd_gallery', [ 'post' ], [
+        'label'        => 'Galleries',
+        'labels'       => [
+            'name'          => 'Galleries',
+            'singular_name' => 'Gallery',
+            'add_new_item'  => 'Add New Gallery',
+            'edit_item'     => 'Edit Gallery',
+            'search_items'  => 'Search Galleries',
+        ],
+        'public'       => true,
+        'hierarchical' => false,
+        'show_ui'      => true,
+        'show_in_rest' => true,   // Required for Gutenberg block editor
+        'rewrite'      => [ 'slug' => 'gkd_gallery' ],
+    ] );
+} );
+```
+
+### Key Requirements
+
+- **Taxonomy ID must be `gkd_gallery`** — the plugin looks for this exact ID
+- **`show_in_rest: true` is required** — without this the block editor cannot fetch gallery terms for the dropdown
+- **`rewrite slug`** — controls the URL of gallery archive pages (e.g. `/gkd_gallery/infrared/`)
+
+### Adding Images to a Gallery
+
+1. Create or edit any **post**
+2. In the right sidebar, find the **Galleries** panel
+3. Assign the post to one or more gallery terms (e.g. "Infrared", "Landscape")
+4. Set a **Featured Image** on the post
+5. The featured image will appear in that gallery
+
+### Creating Gallery Archive Pages
+
+Once your taxonomy is registered, WordPress automatically creates archive URLs for each term:
+
+```
+/gkd_gallery/infrared/    → shows all images tagged "Infrared"
+/gkd_gallery/landscape/   → shows all images tagged "Landscape"
+```
+
+To display these archives using the gallery block:
+
+1. Go to **Appearance → Editor → Templates**
+2. Click **Add New Template → Gallery Archives**
+3. Add the **Category Gallery** block
+4. Leave **Select Galleries** blank (auto-detection handles it)
+5. Save the template
 
 ## Installation
 
