@@ -1,0 +1,13 @@
+{
+  "name": "gkd_gallery",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["blocks/*"],
+  "scripts": {
+    "build": "wp-scripts build && mv -f blocks/style-Gallery-style.css blocks/Gallery/build/style.css && mv -f blocks/style-Gallery-style-rtl.css blocks/Gallery/build/style-rtl.css",
+    "start": "wp-scripts start"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^27.0.0"
+  }
+}

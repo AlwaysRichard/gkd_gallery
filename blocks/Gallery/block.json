@@ -1,0 +1,29 @@
+{
+  "apiVersion": 3,
+  "name": "gkd/ap-gallery",
+  "title": "AlwaysPhotographing Gallery",
+  "category": "widgets",
+  "icon": "block-default",
+  "description": "Renders a tiled gallery.",
+  "supports": { "html": false },
+  "attributes": {
+    "sourceType": { "type": "string", "default": "gallery" },
+    "galleries": { "type": "array", "default": [] },
+    "categories": { "type": "array", "default": [] },
+    "includeUnpublished": { "type": "boolean", "default": false },
+    "layout": { "type": "string", "default": "tiled" },
+    "columns": { "type": "number", "default": 3 },
+    "gutter": { "type": "number", "default": 8 },
+    "targetHeight": { "type": "number", "default": 250 },
+    "maxImages": { "type": "number", "default": 0 },
+    "linkToImage": { "type": "boolean", "default": true },
+    "linkToPost": { "type": "boolean", "default": false },
+    "crop": { "type": "boolean", "default": true },
+    "size": { "type": "string", "default": "large" },
+    "exifTemplate": { "type": "string", "default": "" }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle":  "file:./build/index.css",
+  "style":        "file:./build/style.css",
+  "viewScript":   "file:./build/view.js"
+}
