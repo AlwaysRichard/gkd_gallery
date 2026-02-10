@@ -1,9 +1,14 @@
 <?php
 /**
- * Plugin Name: AlwaysPhotographing Gallery
- * Description: Custom image gallery block
- * Author: alway3397
+ * Plugin Name: GKD Gallery
+ * Description: WordPress Gutenberg block for photo galleries with tiled, grid, masonry, and collage layouts.
+ * Author: AlwaysRichard
  * Version: 1.0.0
+ * Requires at least: 6.0
+ * Requires PHP: 8.0
+ * License: GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: gkd-gallery
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
