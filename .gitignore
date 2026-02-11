@@ -11,3 +11,7 @@ blocks/Gallery/build/
 # OS
 .DS_Store
 Thumbs.db
+
+# npm logs
+npm-debug.log
+npm-debug.log.*
