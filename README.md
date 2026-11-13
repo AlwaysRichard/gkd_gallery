@@ -73,7 +73,7 @@ To display these archives using the gallery block:
 
 1. Go to **Appearance → Editor → Templates**
 2. Click **Add New Template → Gallery Archives**
-3. Add the **Category Gallery** block
+3. Add the **GKD Gallery** block (`gkd/ap-gallery`)
 4. Leave **Select Galleries** blank (auto-detection handles it)
 5. Save the template
 
@@ -101,7 +101,7 @@ Build outputs to `blocks/Gallery/build/`:
 
 ### On Any Page or Post
 
-1. Add the **Category Gallery** block
+1. Add the **GKD Gallery** block (`gkd/ap-gallery`)
 2. Choose **Image Source:** Gallery Taxonomy or Category
 3. Select galleries or category
 4. Choose layout and configure options
@@ -111,7 +111,7 @@ Build outputs to `blocks/Gallery/build/`:
 
 1. Go to **Appearance → Editor → Templates**
 2. Select or create the **Gallery Archives** template
-3. Add the **Category Gallery** block
+3. Add the **GKD Gallery** block (`gkd/ap-gallery`)
 4. Leave **Select Galleries** blank
 5. The block automatically shows images for whichever gallery is being viewed
 
