@@ -1,7 +1,7 @@
 {
   "apiVersion": 3,
   "name": "gkd/ap-gallery",
-  "title": "AlwaysPhotographing Gallery",
+  "title": "GKD Gallery",
   "category": "widgets",
   "icon": "block-default",
   "description": "Renders a tiled gallery.",
